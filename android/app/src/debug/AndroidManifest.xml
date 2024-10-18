@@ -1,0 +1,32 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yourappname">
+
+    <!-- تصريح الإنترنت (لأغراض التطوير مثل hot reload وغيره) -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- تصريح للوصول إلى التخزين (لاختيار الملفات والصور) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <!-- إذا كان التطبيق يدعم نظام Android 10 وما فوق -->
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+
+    <!-- Starting with Android 11, legacy storage permissions are deprecated. The below flag is used for compatibility -->
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:label="yourappname"
+        android:icon="@mipmap/ic_launcher">
+        
+        <!-- إعدادات أخرى للتطبيق مثل النشاط الرئيسي -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
